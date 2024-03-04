@@ -3,9 +3,11 @@ int recursion(int n){
     if(n==1)
     return 1;
     int r= n+recursion(n-1);
-    printf("%d",r);
+    return r;
+    
 
 }
 void main() {
-    recursion(3);
+    int res=recursion(3);
+    printf("%d",res);
 }
