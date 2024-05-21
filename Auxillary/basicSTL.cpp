@@ -66,6 +66,24 @@ void moreVectorFunc(){
             for(auto i:v){
             cout<<i<<" ";
             }
+
+
+
+        //map
+
+int arr[5]={1,2,2,3,1};
+map<int,int> mpp;
+for (int i = 0; i < sizeof(arr); i++)
+{
+    mpp[arr[i]]++;
+}
+        //iteration
+for(auto it: mpp){
+    cout<<it.first<<"->"<<it.second<<endl;
+}
+
+
+
 }
 
 
