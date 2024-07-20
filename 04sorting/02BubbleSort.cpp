@@ -6,9 +6,7 @@ for(int i=n-1; i>=1; i--){
  int didSwap=0; //to terminate loop if its a sorted array (after each pass)
     for(int j=0;j<=i-1;j++){
         if(arr[j]>arr[j+1]){
-            int temp =arr[j];
-            arr[j]=arr[j+1];
-            arr[j+1]=temp;
+            swap(arr[j], arr[j+1]);
             didSwap=1;
         }
     }
