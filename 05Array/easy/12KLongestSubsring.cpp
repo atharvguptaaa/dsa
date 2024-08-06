@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 //Brute Force
 /* int getLongestSubarray(vector<int>& a, long long k) {
     int n=a.size();
@@ -20,8 +19,7 @@ using namespace std;
 } */
 
 //Better approach-Hashmap
-
-    int getLongestSubarray(vector<int>& a, long long k) {
+/*     int getLongestSubarray(vector<int>& a, long long k) {
         int n=a.size();
         int maxlen=0;
         map<long long, int> prevSums;
@@ -48,11 +46,33 @@ using namespace std;
             }
         }
         return maxlen;
-    }
+    } 
+*/
 
+//Optimal approach -2pointer
+int getLongestSubarray(vector<int> &a, long long k){
+int left=0;
+int right=0;
+int sum=a[0];//no. on first index is the sum initially
+int maxlen=0;
+int n=a.size();
+while(right<n){
+
+     while(sum>k&&left<=right){  //if sum exceeds k and checks that atleast one element is in subarray
+        sum-=a[left];
+        left++;
+     }
+     if(sum==k){    //when sum matches k calc length
+        maxlen=max(maxlen,right-left+1);
+     }
+     right++;   //move right ahead now 
+    if(right<n) sum=sum+a[right];  //check if it doesnt exceed the array and find new sum for next iteration 
+}
+return maxlen;
+}
 int main()
 {
-    vector<int> a = {2, 3, 5,2,2, 1, 9};
+    vector<int> a = {2, 3,9 , 4,1,2,2, 1};
     long long k = 10;
     int len = getLongestSubarray(a, k);
     cout << "The length of the longest subarray is: " << len << "\n";
