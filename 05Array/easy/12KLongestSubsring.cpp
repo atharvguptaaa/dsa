@@ -60,7 +60,7 @@ while(right<n){
 
      while(sum>k&&left<=right){  //if sum exceeds k and checks that atleast one element is in subarray
         sum-=a[left];
-        left++;
+        left++;                  //left shift until it one element is in subarray
      }
      if(sum==k){    //when sum matches k calc length
         maxlen=max(maxlen,right-left+1);
