@@ -25,11 +25,15 @@ using namespace std;
 //  }
 // }
 
+
+
 void f(int a[],int i, int n){
     if(i>=n/2) return;
     swap(a[i],a[n-i-1]);
     f(a,i+1,n);
 }
+
+
 
 int main()
 {

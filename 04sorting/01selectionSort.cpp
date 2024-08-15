@@ -7,6 +7,8 @@ void swap(int* a, int* b) {
     *b = temp;
 }
 
+//finds min elemt from the unsorted portion of list, swaps it with first elmt of unsorted section
+
 void selectionSort(int arr[], int n){
 
 for (size_t i = 0; i < n-1; i++)

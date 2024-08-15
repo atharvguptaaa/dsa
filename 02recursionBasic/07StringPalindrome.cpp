@@ -7,7 +7,7 @@ bool f(int i,string word){
     if(i>=n/2) return true;
     if(word[i]!=word[n-i-1])
     return false;
-    return f(i+1,word);
+    return f(i+1,word);   //returns true or false
 }
  
 int main()

@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//bring max to last in each pass by adjacent swaps
+
 void bubbleSort(int arr[],int n){
 for(int i=n-1; i>=1; i--){
  int didSwap=0; //to terminate loop if its a sorted array (after each pass)
