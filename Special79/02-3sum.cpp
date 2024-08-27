@@ -1,6 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
-    
+  // brute 
+ /*  using three loops */
+
+  //better approach- hashSet
+/*   vector<vector<int>> threeSum(vector<int> &nums) {
+    int n=nums.size();
+    set<vector<int>> st;
+    for (int i = 0; i < n; i++) {
+        set<int> hashset;
+        for (int j = i + 1; j < n; j++) {
+            //Calculate the 3rd element:
+            int third = -(nums[i] + nums[j]);
+
+            //Find the element in the set:
+            if (hashset.find(third) != hashset.end()) {
+                vector<int> temp = {nums[i], nums[j], third};
+                sort(temp.begin(), temp.end());
+                st.insert(temp);
+            }
+            hashset.insert(nums[j]);
+        }
+    }
+
+    //store the set in the answer:
+    vector<vector<int>> ans(st.begin(), st.end());
+    return ans;
+}
+ */
+
+ // optimal 2 pointer  
   vector<vector<int>> threeSum(vector<int>& nums) {
          int n=nums.size();
          vector<vector<int>> ans;

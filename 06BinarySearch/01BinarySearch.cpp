@@ -36,7 +36,7 @@ int binarySearch(vector<int> &arr, int target, int low, int high)
     int mid = (low + high) / 2;
     if (target == arr[mid])
         return mid;
-    else if (target > arr[mid])
+    else if (target > arr[mid]) 
         return binarySearch(arr, target, mid + 1, high);
     return binarySearch(arr, target, low, mid - 1);
 }
