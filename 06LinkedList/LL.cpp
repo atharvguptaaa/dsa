@@ -20,19 +20,27 @@ class Node{
 };
 
 Node* convertArrToLL(vector<int> &arr){
-    Node* head= new Node(arr[0]);
-    Node* mover=head;
+    Node* head= new Node(arr[0]);  //first node object(never tamper head)
+    Node* mover=head; //moves through all the node objects assigning pointer values 
     for (int i = 1; i < arr.size(); i++)
     {
-        Node* temp=new Node(arr[i]);
+        Node* temp=new Node(arr[i]); //subsequent node objects
         mover->next=temp;
-        mover=mover->next;
+        mover=temp;
     }
-    
+    return head;
 }
 
 int main(){
     vector<int> arr={2,5,19,8,3};
-    Node* y= new Node(arr[0]);
-    cout<<y->data;
+    // Node* y= new Node(arr[0]);
+    // cout<<y->data;
+    Node* head=convertArrToLL(arr);
+    // cout<<head->next;
+
+    Node* temp= head;
+    while(temp){
+        cout<<temp->data<<endl;
+        temp=temp->next;
+    }
 }
