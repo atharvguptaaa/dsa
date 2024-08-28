@@ -43,7 +43,7 @@ void mS(vector<int> &arr,int low,int high){
     if(low<high){
     int mid=(high+low)/2;
     mS(arr,low,mid);
-    mS(arr,mid+1,high);
+    mS(arr,mid+1,high); 
     merge(arr,low,mid,high);
     }
 
