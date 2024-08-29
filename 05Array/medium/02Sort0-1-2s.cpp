@@ -52,5 +52,5 @@ int main()
         cout << arr[i] << " ";
     }
     cout << endl;
-    return 0;
+    return 0; 
 }
