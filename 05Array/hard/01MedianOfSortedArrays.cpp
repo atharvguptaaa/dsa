@@ -1,6 +1,42 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Brute - by merge function from merge sort
+/*  double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int n1=nums1.size();
+        int n2=nums2.size();
+        int m=n1+n2;
+        vector<int> temp;
+        int left=0,right=0;
+        while(left<n1&&right<n2){
+            if(nums1[left]<=nums2[right]){
+                temp.push_back(nums1[left]);
+                left++;
+            }
+            else{
+                temp.push_back(nums2[right]);
+                right++; 
+            }
+        } 
+            while(left<n1){
+                temp.push_back(nums1[left]);
+                left++;
+            }
+            while(right<n2){
+                 temp.push_back(nums2[right]);
+                right++; 
+            }
+
+            if(m%2==1){
+                return temp[(m/2)];
+            }
+            else{
+                return (double)(temp[m/2]+temp[m/2-1])/2.0;
+            }
+
+ }; */
+
+//Optimal - binary search approach
  double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         int n1=nums1.size();
         int n2=nums2.size();
