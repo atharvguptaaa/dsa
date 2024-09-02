@@ -7,6 +7,22 @@ Return the index of the student that will replace the chalk pieces. */
 #include<bits/stdc++.h>
 using namespace std;
 
+//better
+/*  int chalkReplacer(vector<int>& chalk, int k) {
+        long long sum = 0;
+        for(int i = 0; i < chalk.size(); i++){
+            sum += chalk[i];
+        }
+        k = k % sum;
+        int i = 0;
+        while(k >= chalk[i]){
+            k -= chalk[i];
+            i++;
+        }
+        return i;
+    } */
+
+//optimal
  int bS(vector<long long>& prefix, int k){
         int low=0;
         int high=prefix.size()-1;
@@ -33,7 +49,7 @@ using namespace std;
             prefixSum+=chalk[i];
             prefix[i]=prefixSum;
         }
-        k=(int)k%prefix.back();
+        k=k%prefix.back();
         return bS(prefix,k);
      
     }
