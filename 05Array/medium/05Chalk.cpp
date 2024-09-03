@@ -52,7 +52,7 @@ using namespace std;
         k=k%prefix.back();
         return bS(prefix,k);
      
-    }
+    }   //TC: O(n)+O(logn) and SC:O(n)
 
 int main()
 {
