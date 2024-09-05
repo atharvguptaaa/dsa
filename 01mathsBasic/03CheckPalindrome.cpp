@@ -1,24 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool palindrome(int n)
-{
-    int s=n;
-    int nn=0;
-    while(n!=0){
-        int ld=n%10;
-        n=n/10;
-        nn= (10*nn)+ld;
+//Approach 1: reversing the whole number
+/*    bool isPalindrome(int x) {
+        if(x<0) return false;
+        long long reversed=0;
+        long long temp=x;
+        while(temp!=0){
+        int digit=temp%10;
+        reversed=reversed*10+digit;
+        temp=temp/10;
+        }
+        return (reversed==x);
+    } */
+
+//Optimized Approach -reversing second half
+bool isPalindrome(int x) {
+        if(x<0||(x!=0&&x%10==0)) return false; //numbers with 0 at end cant be palindrome
+        int reversed=0;
+        while(x>reversed){ // loop stops when reversed equals or crosses x
+        reversed=reversed*10+x%10;
+        x/=10;
+        }
+        return (x==reversed) || (x==reversed/10);// for even and odd
     }
-    if(nn==s)
-    return true;
-    else
-    return false;
-}
 
 int main()
 {
-  bool yORn=  palindrome(131);
+  bool yORn= isPalindrome(131);
   cout<<yORn;
  
 }
