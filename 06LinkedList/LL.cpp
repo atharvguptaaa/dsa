@@ -149,17 +149,15 @@ Node* insertElementAtK(Node *head, int k, int val){
         }
 
     Node* temp=head;
-    Node* prev=NULL;
     int count=1;
 
     while(temp){
-        if(count==k){
-            prev->next=new Node(val,temp);
+        if(count==k-1){
+            temp->next=new Node(val,temp->next);
             return head;
         }
     
     count++;
-    prev=temp;
     temp=temp->next;
     }
 
