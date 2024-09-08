@@ -1,1 +1,1 @@
-cout<<head->next;
+   // Create a vector of values: 1, 2, 3, 4, 5

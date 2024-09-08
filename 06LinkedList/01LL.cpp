@@ -48,6 +48,7 @@ Node *findNode(Node *head, int val)
     return 0;
 }
 
+//delete funcs
 Node *removeHead(Node *head)
 {
     if (head == NULL)
