@@ -30,6 +30,7 @@ int main() {
     ListNode* node2 = new ListNode(2);
     ListNode* node3 = new ListNode(0);
     ListNode* node4 = new ListNode(-4);
+    
 
     node1->next = node2;
     node2->next = node3;
