@@ -9,8 +9,9 @@ void merge(vector<int> &arr,int low,int mid,int high){
             temp.push_back(arr[left]);
             left++;
             }
-        else{
-            
+        else
+        {
+             
             temp.push_back(arr[right]);
             right++;
         }
