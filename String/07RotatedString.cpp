@@ -8,12 +8,11 @@ public:
     bool rotateString(string s, string goal) {
         int slen = s.size();
         int glen = goal.size();
-        s = s + s;
         if (glen != slen) return false;
         
-        for (int i = 0; i < slen; i++) {
-            if (s.substr(i, glen) == goal) return true;
-        }
+        s = s + s;
+        
+        if(s.find(goal)!=string::npos) return true;
         return false;
     }
 };
