@@ -6,7 +6,7 @@ using namespace std;
 // O(m*n) approach
 /*     int repeatedStringMatch(string a, string b) {
         if (a == b) return 1;
-        int repeat = 1;
+        int repeat = 1;                                                   
         string temp = a;
         while (temp.size() < b.size()) {
             temp += a;
