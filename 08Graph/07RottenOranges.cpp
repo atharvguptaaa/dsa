@@ -35,7 +35,7 @@ public:
             int j = q.front().first.second;
             int t = q.front().second;
             q.pop();
-            tm = max(tm, t);
+            tm = t;
 
             // Check all four directions
             for (int k = 0; k < 4; k++) {
@@ -52,7 +52,7 @@ public:
 
         // If not all fresh oranges were rotten, return -1
         if (cnt != freshCount) return -1;
-        
+
         // Return the total time taken to rot all oranges
         return tm;
     }
