@@ -71,3 +71,6 @@ int main() {
     cout << "Minimum time to rot all oranges: " << result << endl;
     return 0;
 }
+
+//tc- n x m + n x m x 4 -> O(n x m)
+//sc= O(n x m) for the queue and vis array
