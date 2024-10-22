@@ -72,3 +72,9 @@ int main() {
 
     return 0;
 }
+
+
+// tc: n x m x log(m x n) + n x m x 4 -> O(n xmxlog(nm))
+      //outer    set_len      dfs
+//sc: n x m + n x m   ->O(n x m)
+      //set    vis
