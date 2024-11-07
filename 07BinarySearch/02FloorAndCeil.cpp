@@ -1,3 +1,9 @@
+/*
+Program to find the floor and ceil of a target value `x` in a sorted vector.
+- `findFloor`: Finds the largest element ≤ `x`.
+- `findCeil`: Finds the smallest element ≥ `x`.
+Uses binary search for efficient O(log n) performance.
+*/
 #include <bits/stdc++.h>
 using namespace std;
 

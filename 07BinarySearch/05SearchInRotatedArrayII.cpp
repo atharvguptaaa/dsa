@@ -1,3 +1,4 @@
+// if duplicates are present in the given array
 #include <iostream>
 #include <vector>
 
@@ -11,27 +12,29 @@ public:
             int mid = low + (high - low) / 2;
             if (nums[mid] == target) return mid;
 
-            if(nums[low]==nums[mid]==nums[high]){
-                low++;high--;
+            // Handle duplicates
+            if (nums[low] == nums[mid] && nums[mid] == nums[high]) {
+                low++;
+                high--;
                 continue;
             }
 
+            // Determine which half is sorted
             if (nums[low] <= nums[mid]) { // Left half is sorted
                 if (nums[low] <= target && target <= nums[mid]) {
                     high = mid - 1;
-                }
-                else {
-                    low = mid + 1;
+                } else {
+                    low = mid + 1; 
                 }
             } else { // Right half is sorted
                 if (nums[mid] <= target && target <= nums[high]) {
-                    low = mid + 1;
+                    low = mid + 1; 
                 } else {
-                    high = mid - 1;
+                    high = mid - 1; 
                 }
             }
         }
-        return -1;
+        return -1; // Target not found
     }
 };
 
@@ -48,3 +51,6 @@ int main() {
 
     return 0;
 }
+
+
+//tc - worst case O(n/2) if most or all are duplicates
