@@ -76,6 +76,7 @@ bool isSubsetSum(vector<int>& arr, int target) {
     
         for(int ind=1;ind<n;ind++){
             vector<bool> cur(target+1);
+            cur[0]=0;
             for(int tgt=1;tgt<=target;tgt++){  //as target >=1
 
                 bool notTake=prev[tgt];
