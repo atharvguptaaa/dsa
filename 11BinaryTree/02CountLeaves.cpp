@@ -1,6 +1,6 @@
 // Program to count the number of leaf nodes in a binary tree using an in-order traversal.
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
