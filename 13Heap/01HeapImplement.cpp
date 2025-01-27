@@ -6,6 +6,7 @@ class heap{
         int arr[100];
         int size;
     
+    //constructor
     heap(){
         arr[0]=-1;
         size=0;
@@ -16,11 +17,12 @@ class heap{
         int index=size;
         arr[index]=v;
 
+ // Heapify-up: Restore the max-heap property
         while(index>1){
-            int parent=index/2;
-            if(arr[parent]<arr[index]){
-                swap(arr[parent],arr[index]);
-                index=parent;
+            int parent=index/2; //find parent's index
+            if(arr[parent]<arr[index]){  // If parent is smaller than the current node
+                swap(arr[parent],arr[index]);  // Swap the parent and current node
+                index=parent; // to ensure the max-heap property is maintained at all levels
             }
             else{
                 return;
@@ -28,28 +30,35 @@ class heap{
         }
     }
 
+// Deletes the root (maximum element) of the heap
     void del(){
         if(size==0){
             return;
         }
 
-        arr[1]=arr[size];
+        arr[1]=arr[size]; //swap last elmt with root
         size--;
 
-        int i=1;
+        int i=1; //start with root node
+
+     // Heapify-down: Restore the max-heap property
         while(i<=size){
             int left=2*i;
             int right=2*i+1;
+
+            // Check if the left child exists and is greater than the current node
             if(left<=size && arr[i]<arr[left]){
                 swap(arr[i],arr[left]);
                 i=left;
             }
+
+            // Check if the right child exists and is greater than the current node
             else if(right<=size && arr[i]<arr[right]){
                 swap(arr[i],arr[right]);
                 i=right;
             }
             else{
-                return;
+                return; // If neither child is larger, the heap property is satisfied
             }
         }
     }
