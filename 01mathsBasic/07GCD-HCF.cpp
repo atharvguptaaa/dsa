@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Using Euclidean Algorithm
 int gcd(int a, int b) {
   while (a > 0 && b > 0) {
     if(a>b) a=a%b;
@@ -16,3 +16,5 @@ int main()
  int hcf=gcd(134134,343);
  cout<<hcf;
 }
+
+//O(log(min(a, b)))
